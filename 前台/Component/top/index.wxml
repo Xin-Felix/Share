@@ -1,0 +1,16 @@
+<view class='title-container' style="margin-top:{{statusBarHeight}}">
+  <view class='capsule' wx:if="{{ back || home }}">
+    <view bindtap='back' wx:if="{{back}}">
+      <image src='/image/back.png'></image>
+    </view>
+    <view bindtap='backHome' wx:if="{{home}}">
+      <image src='/image/main.png'></image>
+    </view>
+  </view>
+  <view class='title'>
+    <view wx:if="{{loading}}" class="navBar-loader">
+      <view class="inner"></view>
+    </view>
+    {{title}}
+  </view>
+</view>

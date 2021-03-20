@@ -1,0 +1,7 @@
+
+
+		<view class="main">
+				<image src="/image/bg.jpg" mode="aspectFill" style="width:100vw;height:100vh;position:fixed"></image>
+		</view>
+
+ 

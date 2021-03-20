@@ -1,0 +1,60 @@
+<view>
+		<navbar title="话题" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+</view>
+<scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{navTop+'px'}} - 34px);" bindscrolltolower="newArticleLoadMessage"   >
+		<view class="top">
+						<view class="image">
+								<image src="{{themeMessage[theme_id-1].themeImage}}" mode="widthFix" />
+						</view>
+						<!-- <view class="intro">
+								<view class="intro_title">#{{themeMessage[theme_id-1].themeTitle}}#</view>
+								<view class="intro_detail">{{themeMessage[theme_id-1].themeIntro}}</view>
+						</view> -->
+				</view>
+		<view class="main">
+			
+				<!-- <view class="category">
+						<view class="active">最新</view>
+						<view>最热</view>
+				</view> -->
+				<view style="margin-top:20rpx">
+						<view id="inner-wrap"  style="z-index:99999" >
+								<block wx:for="{{new_article}}" wx:key="huangxin">
+										<view class="body">
+												<view class="user_message" id="{{item.userMessage.userId}}" bind:tap="check_user_message">
+														<view class="user_image">
+																<image src="{{item.userMessage.userAvatar}}" />
+														</view>
+														<view class="message_detail">
+																<view class="user_name">{{item.userMessage.userNickname}}</view>
+																<view class="intro">{{item.userMessage.userMotto}}</view>
+														</view>
+												</view>
+												<!-- <view class="line"></view> -->
+												<view class="content" style="margin-top:20rpx" bind:tap="message_detail" id="{{item.articleId}}">
+												
+														<rich-text nodes="{{item.articleContent}}" ></rich-text>
+												</view>
+												<!-- <view class="loadMore">查看更多</view> -->
+												<view class="time">{{item.createTime}}</view>
+												<view class="flag">
+														<view class="flag_item">
+																{{item.themeId==-1?"#生活":"#"+item.themeMessage.themeTitle}}
+														</view>
+												</view>
+												<!-- <view class="operation">
+																		<text class="iconfont icon-buoumaotubiao15"></text>
+																		<button open-type="share" style="padding: 15rpx;outline: none;margin: 0;background-color: rgba(0, 0, 0, 0);">
+																				<text class="iconfont icon-fenxiang"></text>
+																		</button>
+																		<text class="iconfont icon-pinglun"></text>
+																</view> -->
+										</view>
+								</block>
+						</view>
+				</view>
+				<view class="tip">
+				<text >到底了</text>
+				</view>
+		</view>
+</scroll-view>

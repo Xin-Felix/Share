@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navbar": "/Component/top/index"
+ 
+  }
+}

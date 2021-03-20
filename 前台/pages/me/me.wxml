@@ -1,0 +1,95 @@
+<view>
+		<navbar title="" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+</view>
+<scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{navTop+'px'}} - 34px);" bindscrolltolower="newArticelLoadMessage" >
+		<view class="user_message_detail main">
+				<view class="user_image">
+						<image src="{{userInfo.userAvatar}}" />
+				</view>
+				<view class="user_detail">
+						<view class="user_name">
+								{{userInfo.userNickname}}
+								<text class="{{userInfo.userGender==1?'iconfont icon-nan':'iconfont icon-nv'}}"></text>
+						</view>
+						<view class="user_address">
+								{{userInfo.userCountry==''?'未知':userInfo.userCountry+' '+userInfo.userProvince+'  '+userInfo.userCity}}
+						</view>
+						<view class="user_address">{{userInfo.userToken==''?'':userInfo.createTime+'入驻'}}</view>
+				</view>
+				<view class="call" hidden="{{userInfo.userToken!=null}}" bind:tap="replayPop">私信</view>
+				<view class="call" hidden="{{userInfo.userToken==null}}" bind:tap="exit">退出登录</view>
+		</view>
+		<view class="other_message">
+				<view class="other_message_detail">
+						<!-- <view>{{userInfo.userAge==''?'年龄未知':userInfo.userAge+'岁'}}</view> -->
+						<!-- <view>{{userInfo.userOther==''?'':userInfo.userOther}}</view> -->
+						<view bind:tap="changeMessage">{{userInfo.userMotto}}</view>
+				</view>
+		</view>
+		<block wx:for="{{new_article}}" wx:key="huangxin" >
+				<view class="body" bind:tap="message_detail" id="{{item.articleId}}">
+						<view class="content">
+ 		<rich-text nodes="{{item.articleContent}}" ></rich-text>
+ 
+								<!-- <wxparser rich-text="{{item.articleContent}}" style="pointer-events: none" /> -->
+						</view>
+						<view class="time">{{item.createTime}}</view>
+						<view class="flag">
+								<view class="flag_item">{{item.themeId==-1?"#生活":"#"+item.themeMessage.themeTitle}}</view>
+						</view>
+				</view>
+		</block>
+											<view class="tip">暂时没有更多,快去创作吧!</view>
+</scroll-view>
+<view id="popLayer" hidden='{{!isShow}}' bind:tap="changeMessage"></view>
+<view id="popBox" hidden='{{!isShow}}' style="height:520rpx">
+		<view class="change_message">
+				<!-- <view class="change_item">
+						<view>年龄:</view>
+						<view>
+								<input bindinput="inputAge" type="number" auto-focus value="{{userInfo.userAge}}" maxlength="2"></input>
+						</view>
+				</view> -->
+				<!-- <view class="line"></view>
+				<view class="change_item">
+						<view>社交账号:</view>
+						<view>
+								<input bindinput="inputOther" type="number" value="{{userInfo.userOther}}" maxlength="11"></input>
+						</view>
+				</view> -->
+				<view class="change_item">
+						<!-- <view>手机号:</view>
+						<view>
+								<button class="button" style="font-weight:400" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+										{{userInfo.userPhone==''?'点击获取':userInfo.userPhone}}
+								</button>
+						</view> -->
+				</view>
+				<view style="padding:10rpx">
+						<view>个人简介:</view>
+						<view>
+								<textarea bindinput="inputMotto" placeholder="{{userInfo.userMotto}}"   maxlength="200" style="width:100%;height:300rpx;font-size:25rpx"></textarea>
+						</view>
+				</view>
+				<view class="change_button">
+						<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo"  >
+								同步微信
+						</button>
+						<button bind:tap="saveUserMessage"  >
+								保存资料
+						</button>
+				</view>
+		</view>
+</view>
+<view class="bottom">
+		<image src="/image/change.png" hidden="{{userInfo.userToken==null}}" bind:tap="changeMessage"></image>
+</view>
+
+<!-- 回复窗口 -->
+<view id="popLayer" hidden='{{!isReplay}}' bind:tap="replayPop"></view>
+<view id="popBox" style="height:30%" hidden='{{!isReplay}}'>
+  <textarea value="{{notice.content}}" class="textarea" placeholder="回复-{{userInfo.userNickname}}" placeholder-style="font-size:25rpx;color:cornflowerblue" maxlength="140" bindinput="inputReplay"></textarea>
+  <view class="sendCommentImage">
+    <image src="/image/send.png" bindtap="sendReplay" />
+  </view>
+</view>

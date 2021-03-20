@@ -1,0 +1,81 @@
+
+@import "./assets/iconfont.wxss";
+
+.container {
+  position: fixed;
+  width: 100%;
+}
+
+.tip {
+  font-size: 30rpx;
+  font-weight: 200;
+  color: royalblue;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.iconfont {
+  font-size: 30rpx;
+  height: 60rpx;
+}
+.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+.toolbar view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.submit .button {
+  padding-top: 10rpx !important;
+  padding-bottom: 10rpx !important;
+  border: 1rpx solid white !important;
+  font-weight: 800 !important;
+  font-size: 30rpx !important;
+  color: cornflowerblue !important;
+  width: 45% !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.ql-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 10rpx;
+  height: 600rpx;
+  /* border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1rpx solid #f2f2f2;
+  border-radius: 15rpx;
+}
+
+.ql-active {
+  color: #06c;
+}
+
+.tip image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}

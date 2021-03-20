@@ -1,0 +1,282 @@
+.main {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.user_message_detail .user_image image {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 50%;
+}
+
+.user_detail {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  margin-left: 20rpx;
+}
+
+.call {
+  font-size: 30rpx;
+  color: cadetblue;
+}
+
+.user_message_detail .user_name {
+  color: black;
+  font-weight: 800;
+  font-size: 30rpx;
+}
+
+.user_address {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.other_message {
+  margin: 20rpx;
+  padding: 10rpx;
+  font-size: 25rpx;
+  font-weight: 200;
+  /* border: 1rpx solid #b5fffc; */
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.other_message_detail {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.user_message_detail .operation {
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.user_message_detail .operation view {
+  color: black;
+  font-size: 30rpx;
+}
+
+.user_message_detail .add {
+  text-align: center;
+  margin-top: 50rpx;
+  color: black;
+  font-size: 30rpx;
+}
+
+.body {
+  z-index: 9999999999999;
+  /* margin: 20rpx; */
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%); */
+  /* height: calc(110% - 100rpx); */
+  /* background-color: #FF3CAC;
+background-image: linear-gradient(324deg, #FF3CAC 0%, #784BA0 47%, #2B86C5 100%); */
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.body .content {
+  margin-top: 20px;
+  position: relative;
+  max-height: 80vh;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  /* 超出隐藏 */
+  overflow: hidden;
+  /*超出显示为省略号*/
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+.loadMore {
+  position: relative;
+  z-index: 1998;
+  padding-top: 50rpx;
+  bottom: -1px;
+  margin-top: -50rpx;
+  text-align: center;
+  width: 100%;
+  /* background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(70%, #fff)
+  ); */
+  background-image: linear-gradient(-180deg, #b5fffc 0%, #ffdee9 60%);
+  padding-bottom: 26px;
+}
+
+.body .time {
+  text-align: right;
+  font-weight: 200;
+  font-size: 25rpx;
+  margin-top: 80rpx;
+  color: #999;
+}
+
+.flag {
+  text-align: right;
+}
+
+.flag_item {
+  color: #999;
+  padding: 2rpx;
+  margin: 5rpx;
+  font-size: 25rpx;
+  font-weight: 200;
+}
+
+.operation {
+  margin-top: 35rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.operation view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #999;
+  font-size: 25rpx;
+  font-weight: 200;
+}
+.operation text {
+  padding: 15rpx;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  border-radius: 50%;
+  border: 1rpx solid white;
+  color: rgb(138, 44, 226);
+}
+
+.operation button::after {
+  border: none;
+}
+
+.user_message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user_message .user_image image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.message_detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.user_name {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.change_message {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-size: 30rpx;
+  justify-content: baseline;
+}
+
+.change_item {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.button {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.button::after {
+  border: none;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.change_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+.change_button button {
+  vertical-align: middle;
+  height: 200rpx;
+  font-weight: 600;
+  color: burlywood !important;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+}
+
+.bottom image {
+  height: 80rpx;
+  width: 80rpx;
+}
+.textarea {
+  width: 100%;
+  height: 83%;
+}
+.sendCommentImage {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+.sendCommentImage image {
+  line-height: 60rxp;
+  height: 60rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.tip {
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  color: #999;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 20rpx;
+}

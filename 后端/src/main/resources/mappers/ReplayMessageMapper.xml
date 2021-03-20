@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.huangxin.share.mapper.ReplayMessageMapper">
+    <resultMap id="BaseResultMap" type="work.huangxin.share.model.ReplayMessage">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="replay_id" jdbcType="INTEGER" property="replayId"/>
+        <result column="comment_id" jdbcType="INTEGER" property="commentId"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="replay_content" jdbcType="VARCHAR" property="replayContent"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+
+        <association property="commentUserMessage"
+                     javaType="work.huangxin.share.model.UserMessage">
+            <id column="a_user_id" jdbcType="INTEGER" property="userId"/>
+            <result column="a_user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+            <result column="a_user_gender" jdbcType="TINYINT" property="userGender"/>
+            <result column="a_user_avatar" jdbcType="VARCHAR" property="userAvatar"/>
+        </association>
+        <association property="replayUserMessage" javaType="work.huangxin.share.model.UserMessage">
+            <id column="c_user_id" jdbcType="INTEGER" property="userId"/>
+            <result column="c_user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+            <result column="c_user_gender" jdbcType="TINYINT" property="userGender"/>
+            <result column="c_user_avatar" jdbcType="VARCHAR" property="userAvatar"/>
+        </association>
+    </resultMap>
+    <sql id="Base_Column_List">
+        replay_id,comment_id,user_id,id_replay,replay_type,replay_content,create_time
+    </sql>
+    <select id="getReplayContent" resultMap="BaseResultMap">
+        select b.replay_id,
+        b.comment_id as comment_id,
+        b.user_id as user_id,
+        b.replay_user_id as replay_user_id,
+        b.replay_content as replay_content,
+        b.create_time as create_time,
+        a.user_id as a_user_id,
+        a.user_nickname as a_user_nickname,
+        a.user_gender as a_user_gender,
+        a.user_avatar as a_user_avatar,
+        c.user_id as c_user_id,
+        c.user_nickname as c_user_nickname,
+        c.user_gender as c_user_gender,
+        c.user_avatar as c_user_avatar
+        from user_message as a,
+        replay_message as b
+        left join user_message as c on
+        b.replay_user_id = c.user_id
+        where b.comment_id = #{commentId}
+        and b.user_id = a.user_id
+    </select>
+
+    <select id="getReplayMessage" resultMap="BaseResultMap">
+
+        select
+        b.comment_id as comment_id,
+        b.user_id as user_id,
+        b.replay_user_id as replay_user_id,
+        b.replay_content as replay_content,
+        b.create_time as create_time,
+        a.user_id as a_user_id,
+        a.user_nickname as a_user_nickname,
+        a.user_gender as a_user_gender,
+        a.user_avatar as a_user_avatar,
+        c.user_id as c_user_id,
+        c.user_nickname as c_user_nickname,
+        c.user_gender as c_user_gender,
+        c.user_avatar as c_user_avatar
+        from user_message as a,
+        replay_message as b
+        left join user_message as c on
+        b.replay_user_id = c.user_id
+        where b.user_id = a.user_id
+        and b.replay_id =#{replayId} limit 1
+
+    </select>
+
+</mapper>

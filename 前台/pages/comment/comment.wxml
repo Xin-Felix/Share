@@ -1,0 +1,150 @@
+<view>
+  <navbar title="评论" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+</view>
+<scroll-view scroll-y="{{true}}" style="height: calc(100vh - 85px - {{navTop+'px'}});">
+  <view class="comment">
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+        <view class="content">
+          <view class="user_image">
+            <image style="width:60rpx;height:60rpx" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+          </view>
+          <view class="user_detail">
+            <view class="user_name">用户名</view>
+            <view class="user_comment">
+              用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+              <view class="time">2020-4-5</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+        <view class="content">
+          <view class="user_image">
+            <image style="width:60rpx;height:60rpx" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+          </view>
+          <view class="user_detail">
+            <view class="user_name">用户名</view>
+            <view class="user_comment">
+              用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+              <view class="time">2020-4-5</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+        <view class="content">
+          <view class="user_image">
+            <image style="width:60rpx;height:60rpx" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+          </view>
+          <view class="user_detail">
+            <view class="user_name">用户名</view>
+            <view class="user_comment">
+              用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+              <view class="time">2020-4-5</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+        <view class="content">
+          <view class="user_image">
+            <image style="width:60rpx;height:60rpx" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+          </view>
+          <view class="user_detail">
+            <view class="user_name">用户名</view>
+            <view class="user_comment">
+              用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+              <view class="time">2020-4-5</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="user_image">
+        <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+      </view>
+      <view class="user_detail">
+        <view class="user_name">用户名</view>
+        <view class="user_comment">
+          用户留言用户留言用户留言
+          <view class="time">2020-4-5</view>
+        </view>
+        <view class="content">
+          <view class="user_image">
+            <image style="width:60rpx;height:60rpx" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2674031245,821267606&fm=26&gp=0.jpg" />
+          </view>
+          <view class="user_detail">
+            <view class="user_name">用户名</view>
+            <view class="user_comment">
+              用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言用户留言
+              <view class="time">2020-4-5</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="end">
+    <view class="tip">到底了</view>
+  </view>
+</scroll-view>
+<view class="bottom">
+  <view class="input_comment">
+    <input type="text" placeholder="留下你的评论吧" />
+  </view>
+  <view class="send_comment">
+    <image src="/image/send.png" />
+  </view>
+</view>

@@ -1,0 +1,203 @@
+.body {
+  z-index: 9999999999999;
+  /* margin: 20rpx; */
+  /* 
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #b5fffc 100%, #ffdee9 0%); */
+  /* height: calc(110% - 100rpx); */
+  /* background-color: #FF3CAC;
+background-image: linear-gradient(324deg, #FF3CAC 0%, #784BA0 47%, #2B86C5 100%); */
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.body .content {
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.body .time {
+  text-align: right;
+  font-weight: 200;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+}
+
+.body .image image {
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  width: 100%;
+}
+
+.flag {
+  text-align: right;
+}
+
+.flag_item {
+  color: #999;
+  padding: 2rpx;
+  margin: 5rpx;
+  font-size: 25rpx;
+  font-weight: 200;
+}
+
+.operation1 {
+  position: fixed;
+  right: 25px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.operation1 text {
+  padding: 15rpx;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  border-radius: 50%;
+  border: 1rpx solid white;
+  color: rgb(138, 44, 226);
+}
+
+.operation1 button::after {
+  border: none;
+}
+
+.user_message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user_message .user_image image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.message_detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  flex-grow: 2;
+}
+
+.user_name {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.message_detail .intro {
+  font-weight: 200;
+  width: 500rpx;
+  font-size: 25rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.comment {
+  position: relative;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.comment .content {
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.user_image image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.user_detail {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 3;
+}
+
+.user_detail .user_name {
+  font-weight: 800;
+  font-size: 27rpx;
+  color: #999;
+}
+
+.user_detail .user_comment {
+  line-height: 30rpx;
+  vertical-align: middle;
+  font-size: 25rpx;
+}
+
+.user_detail .user_comment .time {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.dianzan {
+  font-size: 50rpx;
+  color: red;
+  display: flex;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+.end {
+  margin-top: 50rpx;
+  color: #999;
+  font-size: 20rpx;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.line {
+  background-color: #999;
+}
+
+.sendComment {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.like image {
+  width: 80rpx;
+  height: 80rpx;
+  color: #999;
+}
+
+.sendComment .comment image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+textarea {
+  width: 100%;
+  height: 83%;
+}
+
+.sendCommentImage {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.sendCommentImage image {
+  line-height: 60rxp;
+  height: 60rpx;
+  width: 60rpx;
+  text-align: center;
+}

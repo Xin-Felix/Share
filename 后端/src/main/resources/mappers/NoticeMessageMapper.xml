@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.huangxin.share.mapper.NoticeMessageMapper">
+    <resultMap id="BaseResultMap" type="work.huangxin.share.model.NoticeMessage">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="notice_id" jdbcType="INTEGER" property="noticeId"/>
+        <result column="notice_type" jdbcType="INTEGER" property="noticeType"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="replay_id" jdbcType="INTEGER" property="replayId"/>
+        <result column="like_id" jdbcType="INTEGER" property="likeId"/>
+        <result column="comment_id" jdbcType="INTEGER" property="commentId"/>
+        <result column="article_id" jdbcType="INTEGER" property="articleId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="send_user_id" jdbcType="INTEGER" property="sendUserId"/>
+
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="work.huangxin.share.model.NoticeMessage">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        notice_id, notice_type, user_id, replay_id, like_id, comment_id, article_id, create_time,content
+    </sql>
+
+    <select id="getAllNoticeById" resultMap="BaseResultMap">
+
+
+        select * from notice_message where user_id = #{userId} order by create_time desc
+
+
+    </select>
+</mapper>

@@ -1,0 +1,114 @@
+<view class="all">
+  <view>
+    <navbar title="" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+  </view>
+  <scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{navTop+'px'}} - 34px);" bindscrolltolower="newCommentLoadMessage" >
+    <view class="body">
+      <view class="user_message">
+        <view class="user_image">
+          <image src="{{article.userMessage.userAvatar}}" id="{{article.userMessage.userId}}" bind:tap="check_user_message" />
+        </view>
+        <view class="message_detail">
+          <view class="user_name">
+            {{article.userMessage.userNickname}}
+            <text class="{{article.userMessage.userGender==1?'iconfont icon-nan':'iconfont icon-nv'}}"></text>
+          </view>
+          <view class="intro">{{article.userMessage.userMotto}}</view>
+        </view>
+        <view style="color:red;font-size:25rpx" hidden="{{article.userMessage.userId!=userId}}" bindtap="deleteArticle">
+          删除
+        </view>
+        <view style="color:red;font-size:25rpx" hidden="{{article.userMessage.userId==userId}}" bindtap="complainArticle">
+          举报
+        </view>
+      </view>
+      <!-- <view class="line"></view> -->
+      <view class="content">
+       		<rich-text nodes="{{article.articleContent}}" bindtap="previewImage"></rich-text>
+        <!-- <wxparser rich-text="{{article.articleContent}}" /> -->
+      </view>
+      <view class="time">{{article.createTime}}</view>
+      <view class="flag">
+        <view class="flag_item" bind:tap="theme" id="{{article.themeId}}">
+          {{article.themeId==-1?"#生活":"#"+article.themeMessage.themeTitle}}
+        </view>
+      </view>
+    </view>
+    <!-- <view class="line"></view> -->
+    <view class="comment">
+      <block wx:for="{{comment}}" wx:key="huangxin">
+        <view class="content">
+          <view class="user_image" id="{{item.userMessage.userId}}" bind:tap="check_user_message"><image src="{{item.userMessage.userAvatar}}" /></view>
+          <view class="user_detail">
+            <view class="user_name">
+              {{item.userMessage.userNickname}}
+              <text class="{{item.userMessage.userGender==1?'iconfont icon-nan':'iconfont icon-nv'}}" style="font-size:25rpx"></text>
+            </view>
+            <view class="user_comment" bind:tap="replayPop" bind:longtap="deleteComment" data-userid="{{item.userMessage.userId}}" data-nickname="{{item.userMessage.userNickname}}" data-commentid="{{item.commentId}}">
+              {{item.commentContent}}
+              <view class="time">{{item.createTime}}</view>
+            </view>
+            <block wx:for="{{item.replayMessageList}}" wx:for-item="replay" wx:key="huangxin">
+              <view class="content">
+                <view class="user_image">
+                  <image style="width:60rpx;height:60rpx" src="{{replay.commentUserMessage.userAvatar}}" id="{{replay.commentUserMessage.userId}}" bind:tap="check_user_message" />
+                </view>
+                <view class="user_detail">
+                  <view class="user_name">
+                    {{replay.commentUserMessage.userNickname}}
+                    <text class="{{replay.commentUserMessage.userGender==1?'iconfont icon-nan':'iconfont icon-nv'}}" style="font-size:25rpx"></text>
+                  </view>
+                  <view class="user_comment" bind:tap="replayPop" bind:longtap="deleteComment" data-userid="{{replay.commentUserMessage.userId}}" data-nickname="{{replay.commentUserMessage.userNickname}}" data-commentid="{{replay.commentId}}" data-replayid="{{replay.commentUserMessage.userId}}">
+                    <text style="color:#999;font-size:25rpx" id="{{replay.replayUserMessage.userId}}" bind:tap="check_user_message">{{replay.replayUserMessage.userNickname==null?'':replay.commentUserMessage.userId==replay.replayUserMessage.userId?'':'@'+replay.replayUserMessage.userNickname+' '}}</text>
+                    <text>{{replay.replayContent}}</text>
+                    <view class="time">{{replay.createTime}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="end">
+      <view class="tip">暂时没有评论</view>
+    </view>
+  </scroll-view>
+  <!-- <view class="bottom">
+    <view class="input_comment">
+      <input hidden="{{input}}" type="text" placeholder="留下你的评论吧" bindfocus="changeTextarea" value="{{commentMessage.commentContent}}" maxlength="140" bindinput="inputComment" />
+    </view>
+    <view class="send_comment" bindtap="sendComment">
+      <image src="/image/send.png" />
+    </view>
+  </view> -->
+  <view id="popLayer" hidden='{{!isShow}}' bind:tap="pop"></view>
+  <view id="popBox" style="height:30%" hidden='{{!isShow}}'>
+    <textarea value="{{commentMessage.commentContent}}" placeholder="评论该文章" placeholder-style="font-size:25rpx;color:cornflowerblue" maxlength="140" bindinput="inputComment"></textarea>
+    <view class="sendCommentImage">
+      <image src="/image/send.png" bindtap="sendComment" />
+    </view>
+  </view>
+</view>
+<view class="sendComment">
+  <view class="like">
+  <image src="/image/like.png" bind:tap="likeArticle" hidden="{{isLike}}"></image>
+     <image src="/image/like_active.png" bind:tap="likeArticle" hidden="{{!isLike}}"></image>
+  </view>
+  <view>
+    <button open-type="share">
+       <text class="iconfont icon-fenxiang" style="color: rgb(138, 44, 226);font-size:80rpx;"></text>
+    </button>
+  </view>
+  <view class="comment">
+    <image src="/image/comment.png" bind:tap="pop" />
+  </view>
+</view>
+<!-- 回复窗口 -->
+<view id="popLayer" hidden='{{!isReplay}}' bind:tap="replayPop"></view>
+<view id="popBox" style="height:30%" hidden='{{!isReplay}}'>
+  <textarea value="{{replayMessage.replayContent}}" placeholder="回复-{{replayMessage.nickName}}" placeholder-style="font-size:25rpx;color:cornflowerblue" maxlength="140" bindinput="inputReplay"></textarea>
+  <view class="sendCommentImage">
+    <image src="/image/send.png" bindtap="sendReplay" />
+  </view>
+</view>

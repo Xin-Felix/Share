@@ -1,0 +1,18 @@
+<view>
+  <navbar title="主题" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+</view>
+<scroll-view scroll-y="{{true}}" style="height: calc(100vh - 34px - {{navTop+'px'}});">
+  <view class="topic_item">
+    <block wx:for="{{themeMessage}}" wx:key="huangxin">
+      <view class="item" bind:tap="add_detail" id="{{item.themeId}}">
+        <image src="{{item.themeImage}}" mode="widthFix" />
+        <!-- <view class="topic_main_title">{{item.themeTitle}}</view> -->
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<view class="bottom">
+  <view bindtap="add_detail" id="-1">
+      <button class="button" >创作</button>
+  </view>
+</view>

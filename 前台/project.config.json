@@ -1,0 +1,131 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": true,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.11.1",
+  "appid": "wx70a9cccf42d894e4",
+  "projectname": "%E5%BC%80%E5%8F%91%E6%AF%94%E8%B5%9B",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/comment/comment",
+          "pathName": "pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "pages/me/me",
+          "pathName": "pages/me/me",
+          "query": "id=7",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/add/add",
+          "pathName": "pages/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/add_detail/add_detail",
+          "pathName": "pages/add_detail/add_detail",
+          "query": "article_id=9",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "userId=7",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/th",
+          "pathName": "pages/theme/theme",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "pages/message_detail/message_detail",
+          "pathName": "pages/message_detail/message_detail",
+          "query": "article_id=71",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "pages/add_detail/index/index",
+          "pathName": "pages/add_detail/index/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

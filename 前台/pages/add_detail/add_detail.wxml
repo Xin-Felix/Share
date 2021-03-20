@@ -1,0 +1,28 @@
+<!-- <scroll-view scroll-y="{{true}}" style="height: calc(100vh - 44px - {{navTop+'px'}});">
+		<view class="form">
+				<view>
+						<textarea maxlength="1000" bindinput="inputContent" placeholder="点这输入噢~" style="width:100%;height:23vh" placeholder-style="font-size:30rpx;color:cadetblue;"></textarea>
+				</view>
+				<view class="images">
+						<block wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+								<image class='tem_image' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+										<icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+								</image>
+						</block>
+						<image class="tem_image_add" hidden="{{imgs.length==9}}" bindtap="chooseImg" src="/image/add_image.png" mode="aspectFill" />
+				</view>
+				<view class="submit" bind:tap="submit">
+						<text>分享</text>
+				</view>
+		</view>
+</scroll-view> -->
+<view>
+		<navbar title="预览" loading="{{true}}" home="{{true}}" back="{{true}}"></navbar>
+</view>
+<!-- //这里data中article为bindName -->
+<scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{navTop+'px'}} - 34px);">
+		<view style="padding:20rpx">
+		<rich-text nodes="{{article}}" bindtap="previewImage"></rich-text>
+				<!-- <wxparser rich-text="{{article}}" /> -->
+		</view>
+</scroll-view>
