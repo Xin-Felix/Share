@@ -1,0 +1,104 @@
+{
+  "groups": [
+    {
+      "name": "audience",
+      "type": "work.huangxin.share.model.Audience",
+      "sourceType": "work.huangxin.share.model.Audience"
+    },
+    {
+      "name": "oss",
+      "type": "work.huangxin.share.model.OSSMessage",
+      "sourceType": "work.huangxin.share.model.OSSMessage"
+    },
+    {
+      "name": "swagger",
+      "type": "work.huangxin.share.config.SwaggerConfig",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "wx",
+      "type": "work.huangxin.share.model.WXMessage",
+      "sourceType": "work.huangxin.share.model.WXMessage"
+    }
+  ],
+  "properties": [
+    {
+      "name": "audience.base64-secret",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.Audience"
+    },
+    {
+      "name": "audience.client-id",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.Audience"
+    },
+    {
+      "name": "audience.expires-second",
+      "type": "java.lang.Integer",
+      "sourceType": "work.huangxin.share.model.Audience",
+      "defaultValue": 0
+    },
+    {
+      "name": "audience.name",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.Audience"
+    },
+    {
+      "name": "oss.oss-id",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.OSSMessage"
+    },
+    {
+      "name": "oss.oss-secret",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.OSSMessage"
+    },
+    {
+      "name": "swagger.base-package",
+      "type": "java.lang.String",
+      "description": "API接口包路径",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "swagger.contact",
+      "type": "springfox.documentation.service.Contact",
+      "description": "联系人",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "description": "API描述",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "swagger.terms-of-service-url",
+      "type": "java.lang.String",
+      "description": "服务条款地址",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "description": "API页面标题",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String",
+      "description": "版本号",
+      "sourceType": "work.huangxin.share.config.SwaggerConfig"
+    },
+    {
+      "name": "wx.wx-id",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.WXMessage"
+    },
+    {
+      "name": "wx.wx-secret",
+      "type": "java.lang.String",
+      "sourceType": "work.huangxin.share.model.WXMessage"
+    }
+  ],
+  "hints": []
+}
